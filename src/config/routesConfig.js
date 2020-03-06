@@ -1,4 +1,4 @@
-import UserController from "./../src/controllers/UserController";
+import UserController from "./..UserController";
 
 export default app => {
   // USER ROUTES
