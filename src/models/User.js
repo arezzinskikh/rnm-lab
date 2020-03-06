@@ -1,12 +1,45 @@
-const mongoose = require("mongoose");
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
+import uniqueValidator from "mongoose-unique-validator";
+import slugify from "slugify";
 
-const userSchema = new Schema({
-  id: Number,
-  first_name: String,
-  last_name: String,
-  title: String,
-  age: Number
-});
+class User {
+  initSchema() {
+    const schema = new Schema(
+      {
+        id: {
+          type: Number,
+          required: true
+        },
+        first_name: String,
+        subtitle: {
+          type: String,
+          required: true
+        },
+        last_name: String,
+        subtitle: {
+          type: String,
+          required: true
+        },
+        title: {
+          type: String,
+          required: false
+        },
+        age: {
+          type: Number,
+          required: true
+        }
+      },
+      { timestamps: true }
+    );
 
-mongoose.model("users", userSchema);
+    schema.plugin(uniqueValidator);
+    mongoose.model("users", schema);
+  }
+
+  getInstance() {
+    this.initSchema();
+    return mongoose.model("users");
+  }
+}
+
+export default User;

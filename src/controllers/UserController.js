@@ -1,4 +1,4 @@
-//src/controllers/PostController.js
+//src/controllers/UserController.js
 
 import Controller from "./Controller";
 import UserService from "./../services/UserService";

@@ -1,16 +1,15 @@
-import express from 'express';
-const bodyParser = require("body-parser");
+import express from "express";
+import bodyParser from "body-parser";
 
 const app = express();
 
 // IMPORT CONFIG
-require("./src/config/serverConfig");
-require("./src/config/mongodbConfig");
-require("./src/config/routesConfig");
-setRoutes(app);
+import "./src/config/mongodbConfig";
+import "./src/config/routesConfig";
+
 
 // IMPORT MODELS
-require("./src/models/User");
+import "./src/models/User";
 
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
