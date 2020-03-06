@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node index.js",
+    "dev:start": "clear; nodemon --exec babel-node index.js",
     "server": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +28,10 @@
     "mongoose": "^5.9.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-loader": "^8.0.6",
     "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
   }
