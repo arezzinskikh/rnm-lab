@@ -3,10 +3,42 @@ import mongoose from "mongoose";
 class Service {
   constructor(model) {
     this.model = model;
+    this.getById = this.getById.bind(this);
     this.getAll = this.getAll.bind(this);
     this.insert = this.insert.bind(this);
     this.update = this.update.bind(this);
     this.delete = this.delete.bind(this);
+  }
+
+  async getById(query) {
+    if (query.id) {
+      try {
+        query.id = new mongoose.mongo.id(query.id);
+      } catch (error) {
+        console.log("not able to generate mongoose id with content", query.id);
+      }
+    }
+
+    try {
+      let items = await this.model
+        .find(query)
+        .skip(skip)
+        .limit(limit);
+      let total = await this.model.count();
+
+      return {
+        error: false,
+        statusCode: 200,
+        data: items,
+        total
+      };
+    } catch (errors) {
+      return {
+        error: true,
+        statusCode: 500,
+        errors
+      };
+    }
   }
 
   async getAll(query) {
