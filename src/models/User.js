@@ -33,7 +33,7 @@ class User {
     );
 
     schema.plugin(uniqueValidator);
-    mongoose.model("users", schema);
+    mongoose.model("users", schema, "NodeJSCollection");
   }
 
   getInstance() {

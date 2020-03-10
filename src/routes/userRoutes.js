@@ -2,12 +2,14 @@ const mongoose = require("mongoose");
 const User = mongoose.model("users");
 
 module.exports = app => {
-  app.get(`/api/users`, async (req, res) => {
+  app.get(`/api/user`, async (req, res) => {
     let users = await User.find();
+    console.log("Users: " + users);
     return res.status(200).send(users);
   });
 
   app.get(`/api/user/:id`, async (req, res) => {
+    console.log(req.params.id);
     let users = await User.findOne({ id: req.params.id });
     return res.status(200).send(users);
   });

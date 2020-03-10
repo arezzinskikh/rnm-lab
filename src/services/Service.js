@@ -10,27 +10,16 @@ class Service {
     this.delete = this.delete.bind(this);
   }
 
-  async getById(query) {
-    if (query.id) {
-      try {
-        query.id = new mongoose.mongo.id(query.id);
-      } catch (error) {
-        console.log("not able to generate mongoose id with content", query.id);
-      }
-    }
+  async getById(id) {    
 
     try {
-      let items = await this.model
-        .find(query)
-        .skip(skip)
-        .limit(limit);
-      let total = await this.model.count();
+      let item = await this.model.find({id: id});
+      console.log(item);
 
       return {
         error: false,
         statusCode: 200,
-        data: items,
-        total
+        data: item        
       };
     } catch (errors) {
       return {
@@ -41,7 +30,8 @@ class Service {
     }
   }
 
-  async getAll(query) {
+  async getAll(query) {   
+
     let { skip, limit } = query;
 
     skip = skip ? Number(skip) : 0;
@@ -54,6 +44,7 @@ class Service {
       try {
         query._id = new mongoose.mongo.ObjectId(query._id);
       } catch (error) {
+        console.log(error);
         console.log("not able to generate mongoose id with content", query._id);
       }
     }

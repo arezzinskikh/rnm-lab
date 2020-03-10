@@ -9,7 +9,7 @@ class Controller {
   }
 
   async getById(req, res) {
-    return res.status(200).send(await this.service.getById(req.query));
+    return res.status(200).send(await this.service.getById(req.params.id));
   }
 
   async getAll(req, res) {
