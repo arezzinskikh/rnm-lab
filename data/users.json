@@ -1,4 +1,38 @@
-{"_id":{"$oid":"5e61e08561a4c24b8c87fcf8"},"id":{"$numberInt":"1"},"first_name":"James","last_name":"Bond","title":"Secret agent","age":{"$numberInt":"59"},"__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5e61e11c9af5a86ef4c6a469"},"id":{"$numberInt":"2"},"first_name":"Alex","last_name":"Rezz","title":"Manager","age":{"$numberInt":"59"},"__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5e61e158bddbff4db020254a"},"id":{"$numberInt":"3"},"first_name":"Gil","last_name":"Biton","title":"Pilot","age":{"$numberInt":"18"},"__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5e61e1c8143dee119c17dd8f"},"id":{"$numberInt":"4"},"first_name":"Sam","last_name":"Buzaglo","title":"Zookeeper","age":{"$numberInt":"89"},"__v":{"$numberInt":"0"}}
+[
+  {
+    "_id": { "$oid": "5e61e08561a4c24b8c87fcf8" },
+    "id": { "$numberInt": "1" },
+    "first_name": "James",
+    "last_name": "Bond",
+    "title": "Secret agent",
+    "age": { "$numberInt": "59" },
+    "__v": { "$numberInt": "0" }
+  },
+  {
+    "_id": { "$oid": "5e61e11c9af5a86ef4c6a469" },
+    "id": { "$numberInt": "2" },
+    "first_name": "Alex",
+    "last_name": "Rezz",
+    "title": "Manager",
+    "age": { "$numberInt": "59" },
+    "__v": { "$numberInt": "0" }
+  },
+  {
+    "_id": { "$oid": "5e61e158bddbff4db020254a" },
+    "id": { "$numberInt": "3" },
+    "first_name": "Gil",
+    "last_name": "Biton",
+    "title": "Pilot",
+    "age": { "$numberInt": "18" },
+    "__v": { "$numberInt": "0" }
+  },
+  {
+    "_id": { "$oid": "5e61e1c8143dee119c17dd8f" },
+    "id": { "$numberInt": "4" },
+    "first_name": "Sam",
+    "last_name": "Buzaglo",
+    "title": "Zookeeper",
+    "age": { "$numberInt": "89" },
+    "__v": { "$numberInt": "0" }
+  }
+]
